@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:mvc_flutter_app/controllers/books_controller.dart';
 import 'package:mvc_flutter_app/repositories/books_repository.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class BooksBiblePage extends StatefulWidget {
+  const BooksBiblePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<BooksBiblePage> createState() => _BooksBiblePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _BooksBiblePageState extends State<BooksBiblePage> {
   late BooksController booksController;
   @override
   void initState() {
@@ -41,7 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       leading: const Icon(Icons.book_rounded),
                       title: Text(book.name),
                       subtitle: Text(
-                          'Autor : ${book.author} , Nº capitulos: ${book.chapters}'),
+                        'Nº capitulos: ${book.chapters}',
+                      ),
                     );
                   },
                 );

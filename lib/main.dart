@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Demo Mvc',
+      title: 'Bible Appß',
       theme: ThemeData.dark(),
-      home: const MyHomePage(title: 'Biblia'),
+      home: const BooksBiblePage(title: 'Biblia APP'),
     );
   }
 }

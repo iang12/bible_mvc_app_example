@@ -6,18 +6,30 @@ class BooksRepository {
 
   BooksRepository(this.dio);
 
-  Future<List<BookModel>> getBooks() async {
+  Future<List<BookModel>> getBibleBooks() async {
     try {
       final response =
-          await dio.get('https://www.abibliadigital.com.br/api/books/');
+          await dio.get(
+        'https://api.scripture.api.bible/v1/bibles/90799bb5b996fddc-01/books',
+        options: Options(
+          headers: {
+            'api-key': 'put your api here',
+          },
+        ),
+        queryParameters: {
+          'include-chapters': true,
+        },
+      );
 
-      return (response.data as List)
+      return (response.data['data'] as List)
           .map((book) => BookModel.fromMap(book))
           .toList();
+
+      
     } catch (e) {
       throw Exception('Erro ao buscar os livros da biblia.');
     }
   }
 }
-
-//https://www.abibliadigital.com.br/pt
+//new API : https://api.scripture.api.bible/
+//old API : https://www.abibliadigital.com.br/pt

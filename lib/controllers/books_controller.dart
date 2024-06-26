@@ -8,8 +8,9 @@ class BooksController extends ChangeNotifier {
   BooksController(this.repository);
 
   List<BookModel> books = [];
+  
   getBooksBible() async {
-    books = await repository.getBooks();
+    books = await repository.getBibleBooks();
     notifyListeners();
   }
 }
