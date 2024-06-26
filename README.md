@@ -1,6 +1,6 @@
 # mvc_flutter_app
 
-A new Flutter project.
+a sample application bible using the mvc pattern in flutter
 
 ## Getting Started
 
